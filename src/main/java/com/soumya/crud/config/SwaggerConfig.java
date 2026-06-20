@@ -13,7 +13,7 @@ public class SwaggerConfig {
                 .info(new Info()
                         .title("🎓 Student Management API")
                         .description(
-                            "Student ka poora CRUD System")
+                            "Student's full CRUD System")
                         .version("v1.0")
                         .contact(new Contact()
                                 .name("Soumya")

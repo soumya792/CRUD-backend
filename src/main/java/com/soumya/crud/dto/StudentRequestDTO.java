@@ -9,20 +9,20 @@ import lombok.*;
 @Builder
 public class StudentRequestDTO {
 
-    @NotBlank(message = "Name required hai!")
+    @NotBlank(message = "Name is required!")
     private String name;
 
-    @NotNull(message = "Age required hai!")
-    @Min(value = 1, message = "Age valid honi chahiye!")
+    @NotNull(message = "Age is required!")
+    @Min(value = 1, message = "Age is not valid!")
     private Integer age;
 
-    @NotBlank(message = "Course required hai!")
+    @NotBlank(message = "Course is required!")
     private String course;
 
-    @NotBlank(message = "Phone required hai!")
+    @NotBlank(message = "Phone is required!")
     private String phone;
 
-    @NotBlank(message = "Email required hai!")
-    @Email(message = "Valid email daalo!")
+    @NotBlank(message = "Email is required!")
+    @Email(message = "Valid email is required!")
     private String email;
 }

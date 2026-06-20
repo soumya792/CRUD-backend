@@ -17,24 +17,24 @@ public class Student {
     private Long id;
 
     @Column(nullable = false)
-    @NotBlank(message = "Name required hai!")
+    @NotBlank(message = "Name is required!")
     private String name;
 
     @Column(nullable = false)
-    @NotNull(message = "Age required hai!")
-    @Min(value = 1, message = "Age valid honi chahiye!")
+    @NotNull(message = "Age is required!")
+    @Min(value = 1, message = "Age is not valid!")
     private Integer age;
 
     @Column(nullable = false)
-    @NotBlank(message = "Course required hai!")
+    @NotBlank(message = "Course is required!")
     private String course;
 
     @Column(nullable = false)
-    @NotBlank(message = "Phone required hai!")
+    @NotBlank(message = "Phone is required!")
     private String phone;
 
     @Column(nullable = false, unique = true)
-    @NotBlank(message = "Email required hai!")
-    @Email(message = "Valid email daalo!")
+    @NotBlank(message = "Email is required!")
+    @Email(message = "Valid email is required!")
     private String email;
 }

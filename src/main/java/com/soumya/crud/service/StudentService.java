@@ -21,7 +21,7 @@ public class StudentService {
         // Email already exist karta hai?
         if (studentRepository.existsByEmail(dto.getEmail())) {
             throw new RuntimeException(
-                "Email already exist karta hai!");
+                "Email is already in use!");
         }
 
         Student student = Student.builder()
@@ -34,7 +34,7 @@ public class StudentService {
 
         Student saved = studentRepository.save(student);
         return mapToResponse(saved, 
-                "Student successfully add hua! ✅");
+                "Student successfully added! ✅");
     }
 
     // ===== READ ALL =====
@@ -49,8 +49,8 @@ public class StudentService {
     public StudentResponseDTO getStudentById(Long id) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(
-                    "Student nahi mila ID: " + id));
-        return mapToResponse(student, "Student mila! ✅");
+                    "Student ID not found: " + id));
+        return mapToResponse(student, "Student found! ✅");
     }
 
     // ===== UPDATE =====
@@ -59,7 +59,7 @@ public class StudentService {
                               StudentRequestDTO dto) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(
-                    "Student nahi mila ID: " + id));
+                    "Student ID not found: " + id));
 
         student.setName(dto.getName());
         student.setAge(dto.getAge());
@@ -69,16 +69,16 @@ public class StudentService {
 
         Student updated = studentRepository.save(student);
         return mapToResponse(updated, 
-                "Student update ho gaya! ✅");
+                "Student updated! ✅");
     }
 
     // ===== DELETE =====
     public String deleteStudent(Long id) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(
-                    "Student nahi mila ID: " + id));
+                    "Student ID not found: " + id));
         studentRepository.delete(student);
-        return "Student ID " + id + " delete ho gaya! 🗑️";
+        return "Student ID " + id + " deleted! 🗑️";
     }
 
     // ===== MAPPER =====

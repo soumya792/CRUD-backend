@@ -21,7 +21,7 @@ public class StudentController {
 
     // ===== POST - CREATE =====
     @PostMapping
-    @Operation(summary = "Naya student add karo")
+    @Operation(summary = "Add new student")
     public ResponseEntity<StudentResponseDTO> createStudent(
             @Valid @RequestBody StudentRequestDTO dto) {
         return ResponseEntity
@@ -31,7 +31,7 @@ public class StudentController {
 
     // ===== GET ALL =====
     @GetMapping
-    @Operation(summary = "Saare students dekho")
+    @Operation(summary = "Get all students")
     public ResponseEntity<List<StudentResponseDTO>> 
                                         getAllStudents() {
         return ResponseEntity
@@ -40,7 +40,7 @@ public class StudentController {
 
     // ===== GET BY ID =====
     @GetMapping("/{id}")
-    @Operation(summary = "ID se student dekho")
+    @Operation(summary = "Get student by ID")
     public ResponseEntity<StudentResponseDTO> 
                                 getStudentById(
             @PathVariable Long id) {
@@ -50,7 +50,7 @@ public class StudentController {
 
     // ===== PUT - UPDATE =====
     @PutMapping("/{id}")
-    @Operation(summary = "Student update karo")
+    @Operation(summary = "Update student")
     public ResponseEntity<StudentResponseDTO> updateStudent(
             @PathVariable Long id,
             @Valid @RequestBody StudentRequestDTO dto) {
@@ -60,7 +60,7 @@ public class StudentController {
 
     // ===== DELETE =====
     @DeleteMapping("/{id}")
-    @Operation(summary = "Student delete karo")
+    @Operation(summary = "Delete student")
     public ResponseEntity<String> deleteStudent(
             @PathVariable Long id) {
         return ResponseEntity
